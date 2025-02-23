@@ -11,10 +11,10 @@ export function Cart() {
             <h1 className="font-medium text-2xl text-center my-4">My Cart</h1>
 
             {cart.length === 0 && (
-                <div className="flex flex-col items-center gap-3">
-                    <p>Ops, seu carrinho está vazio!</p>
+                <div className="flex flex-col items-center justify-center">
+                    <p className="font-medium">Ops, seu carrinho está vazio!</p>
 
-                    <Link to='/' className="bg-sky-400 rounded px-1 py-1">
+                    <Link to='/' className="bg-sky-600 my-3 p-1 px-3 text-white font-medium rounded">
                         Voltar para a página inicial
                     </Link>
                 </div>
@@ -37,7 +37,7 @@ export function Cart() {
                     
                     <div className="flex items-center justify-center gap-3">
                         <button 
-                            className="bg-slate-500 rounded px-2 text-white font-medium flex items-center justify-center cursor-pointer"
+                            className="bg-red-600 rounded px-2 text-white font-medium flex items-center justify-center cursor-pointer"
                             onClick={() => removeItemCart(item)}
                         >    
                             - 
@@ -46,7 +46,7 @@ export function Cart() {
                         <span className="font-medium">{item.amount}</span>
                         
                         <button 
-                            className="bg-slate-500 rounded px-2 text-white font-medium flex items-center justify-center cursor-pointer"
+                            className="bg-green-600 rounded px-2 text-white font-medium flex items-center justify-center cursor-pointer"
                             onClick={() => addItemCart(item)}
                         >
                             +
