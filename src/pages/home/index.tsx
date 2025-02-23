@@ -7,7 +7,7 @@ import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 
 export interface ProductProps {
-    id: string;
+    id: number;
     title: string;
     description: string;
     price: number;
@@ -29,36 +29,36 @@ export function Home() {
         getProducts();
     }, [])
 
-    function handleAddCartItem(produto: ProductProps) {
-        addItemCart(produto);
+    function handleAddCartItem(product: ProductProps) {
+        addItemCart(product);
     }
 
     return (
         <div>
             <main className="max-sm:mb-20 w-full max-w-7xl px-4 mx-auto">
-                <h1 className="font-bold text-2xl mb-4 mt-10 text-center">Pet Shop Home</h1>
+                <h1 className="font-bold text-2xl mb-4 mt-10 text-center">Pet Shop</h1>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
-                    {products.map((produto) => (
-                        <section key={produto.id} className="w-full">
+                    {products.map((product) => (
+                        <section key={product.id} className="w-full">
                             <Link to='/'>
                                 <img 
-                                    src={produto.cover}
-                                    alt={produto.title}
+                                    src={product.cover}
+                                    alt={product.title}
                                 />
                             </Link>
-                            <p className="font-medium mt-1 mb-2">{produto.title}</p>
+                            <p className="font-medium mt-1 mb-2 text-nowrap overflow-x-hidden">{product.title}</p>
 
                             <div className="flex gap-3 items-center">
                                 <strong className="text-zinc-700/90">
-                                    {produto.price.toLocaleString("pt-BR", {
+                                    {product.price.toLocaleString("pt-BR", {
                                         style: "currency",
                                         currency: "BRL"
                                     })}
                                 </strong>
 
                                 <button className="bg-zinc-900 p-1 rounded cursor-pointer">
-                                    <BsCartPlus size={24} color="#FFF" onClick={() => handleAddCartItem(produto)}/>
+                                    <BsCartPlus size={24} color="#FFF" onClick={() => handleAddCartItem(product)}/>
                                 </button>
                             </div>
                         </section>
