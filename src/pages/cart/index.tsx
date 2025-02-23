@@ -8,7 +8,7 @@ export function Cart() {
 
     return (
         <div className="w-full max-w-7xl mx-auto px-4">
-            <h1 className="font-medium text-2xl text-center my-4">My Cart</h1>
+            <h1 className="font-medium text-2xl text-center my-4">Meu Carrinho</h1>
 
             {cart.length === 0 && (
                 <div className="flex flex-col items-center justify-center">
