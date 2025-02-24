@@ -41,7 +41,7 @@ export function Home() {
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
                     {products.map((product) => (
                         <section key={product.id} className="w-full">
-                            <Link to='/'>
+                            <Link to={`/product/${product.id}`}>
                                 <img 
                                     src={product.cover}
                                     alt={product.title}
