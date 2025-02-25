@@ -3,7 +3,7 @@ import { Layout } from "./components/Layout";
 
 import { Home } from "./pages/home";
 import { Cart } from "./pages/cart";
-import { Product } from "./pages/procuct";
+import { Product } from "./pages/detail";
 
 const router = createBrowserRouter([
   {
